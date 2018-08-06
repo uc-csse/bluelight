@@ -1,0 +1,2 @@
+gst-launch-1.0 videotestsrc horizontal-speed=1 ! video/x-raw,width=320,height=240 ! x264enc threads=1 bitrate=32 ! tcpserversink port=8554
+gst-launch-1.0 tcpclientsrc port=8554 host=localhost ! h264parse ! avdec_h264 ! xvimagesink
